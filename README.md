@@ -1,5 +1,7 @@
 <h1> PROJECT 0 CODENAME TAMAGOCHI: RakuRakuDinoKun Virtual Clone</h1>
 
+![rakuraku_dinokun](wireframe_images/tamagochi_aqua.jpeg)
+
 
 <h2>Users stories</h2>
 
@@ -29,4 +31,8 @@ All of the meters will increase or decrease, over time and according to how the 
     - if it reaches 0 Tamagochi will get too excited their heart is going to explode they will die
 
 
-![wireframe](wireframe_images/Tamagochi.png)
+<h2>Wireframes</h2>
+
+![wireframe](wireframe_images/Tamagochi_1.png)
+
+![wireframe](wireframe_images/Tamagochi_2.png)
