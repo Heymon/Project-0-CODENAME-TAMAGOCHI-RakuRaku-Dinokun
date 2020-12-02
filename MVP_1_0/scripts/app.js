@@ -22,10 +22,12 @@ console.log("app.js load");
 
 
 
+//======================================= VARIABLES =========================
+
 class Tamagochi {
 
-    constructor(name){
-        this.name= name;
+    constructor(){
+        this.name= "";
 
         this.age=0;
         this.hunger=5;
@@ -36,21 +38,52 @@ class Tamagochi {
     }
 
 
+    setName = function setName() {
+
+        const $curInput = $(".screen").children("input");
+    
+        this.name = $curInput.val();
+
+        $curInput.val("");
+    
+        console.log(this.name);
+        console.log(this);
+        
+    }
+
+
 }
 
 
-$("#enter__button").on("click", function test(event) {
+const screens = ["start", "home", "feed", "sleep", "play"];
+let curScreen = screens[0];
 
-    const $curInput = $(".screen").children("input");
+//======================================= FUNCTIONS =========================
 
-    console.log($curInput);
+const checkScreen = function checkScreen(event) {
 
-    const test = new Tamagochi($curInput.val());
-
-    console.log(test);
+    if (curScreen === "start") {
+        test.setName();
+        
+    } else if (curScreen === "home"){
+        
+    }else if (curScreen === "feed"){
+        
+    }else if (curScreen === "sleep"){
+        
+    }else if (curScreen === "play"){
+        
+    }
     
-})
+}
 
+
+
+
+
+//======================================= EVENT LISTENERS =========================
+
+$("#enter__button").on("click", checkScreen);
 
 /* const $curInput = $(".screen").children("input");
 
@@ -60,3 +93,8 @@ console.log($curInput.text());
 
 
 const test = new Tamagochi(); */
+
+//======================================= UPDATE =========================
+
+
+const test = new Tamagochi();
