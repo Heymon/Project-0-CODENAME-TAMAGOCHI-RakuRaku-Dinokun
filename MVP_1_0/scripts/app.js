@@ -64,6 +64,8 @@ const checkScreen = function checkScreen(event) {
 
     if (curScreen === "start") {
         test.setName();
+        curScreen= screens[1];
+        changeScreen(curScreen);
         
     } else if (curScreen === "home"){
         
@@ -77,9 +79,34 @@ const checkScreen = function checkScreen(event) {
     
 }
 
+const changeScreen = function changeScreen(screenOn) {
+
+    const $screens = $(".screen");
+    for (let i = 0; i < $screens.length; i++) {
+        if ($screens.eq(i).hasClass (screenOn)) {
+            $screens.eq(i).removeClass("off");
+            $screens.eq(i).addClass("on");
+            
+        } else {
+            $screens.eq(i).removeClass("on");
+            $screens.eq(i).addClass("off");
+
+        }
+        
+    }
+
+    
+}
 
 
-
+/* const $screens = $(".screen");
+console.log($screens.eq(0));
+console.log($screens.eq(0).removeClass("off"));
+$screens.eq(0).removeClass("off");
+console.log($screens.eq(0).removeClass("off"));
+$screens.eq(0).addClass("on");
+$screens.eq(0).addClass("on");
+$screens.eq(0).addClass("on"); */
 
 //======================================= EVENT LISTENERS =========================
 
