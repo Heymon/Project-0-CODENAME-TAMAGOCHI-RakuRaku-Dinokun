@@ -81,6 +81,7 @@ const checkScreen = function checkScreen(event) {
 
 const changeScreen = function changeScreen(screenOn) {
 
+    console.log(screenOn);
     const $screens = $(".screen");
     for (let i = 0; i < $screens.length; i++) {
         if ($screens.eq(i).hasClass (screenOn)) {
