@@ -18,9 +18,11 @@ body {
 
     height: 1000px;
     width: 1000px;
-    display: flex;
-    justify-content: center;
-    align-items: center;    
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 750px 250px;
+    justify-items: center;
+    align-items: center;     
 
 }
 svg {
@@ -33,4 +35,31 @@ ellipse {
     
     fill: rosybrown;
     stroke: royalblue;
+}
+
+svg ellipse:last-of-type {
+
+    fill: rosybrown;
+    stroke: rosybrown;
+
+
+}
+
+.body__screen {
+
+    height: 300px;
+    width: 400px;
+    /* display: flex;
+    align-self: center; */
+
+}
+.plastic__body__top {
+    height: 70%;
+    width: 75%;
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end; 
+
+
 }
