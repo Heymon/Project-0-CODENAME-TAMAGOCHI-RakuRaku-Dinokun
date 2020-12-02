@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+body {
+    background: #f0e6e6;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.plastic__body {
+
+    height: 1000px;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+
+}
+svg {
+
+    position: absolute;
+    z-index: -1;
+}
+
+ellipse {
+    
+    fill: rosybrown;
+    stroke: royalblue;
+}

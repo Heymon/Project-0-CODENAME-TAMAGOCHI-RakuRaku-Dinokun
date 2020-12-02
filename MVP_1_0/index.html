@@ -3,14 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <!-- Main JS -->
+  <script src="scripts/app.js" defer></script>
+    
+
     <title>tamagochi</title>
 </head>
 <body>
     <section class="plastic__body">
 
+        <!-- <svg width="1000" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="500" cy="640" rx="369" ry="260">
+        </svg> -->
+
+        <svg width="1000" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <!-- main body   -->
+            <ellipse cx="500" cy="640" rx="369" ry="260"/>
+            <ellipse cx="500" cy="500" rx="300" ry="250"/>
+            <!-- block middle border   -->
+            <ellipse class = "test" cx="500" cy="620" rx="350" ry="250"/>
+              
+            <!-- first screen indent   -->
+              <!-- left side   -->
+              <path d="M 280 420 C 250 500, 240 650, 300 700" stroke="black" fill="transparent"/>
+              
+              <path d="M 300 700 C 325 720, 340 724, 350 720" stroke="black" fill="transparent"/>
+              <!-- bottom    -->
+              <path d="M 350 720 C 400 690, 600 690, 650 720" stroke="black" fill="transparent"/>
+              
+              <path d="M 650 720 C 660 724, 675 720, 700 700" stroke="black" fill="transparent"/>
+              
+            <!--   <path d="M 650 720 C 675 730, 699 702, 700 700" stroke="black" fill="transparent"/> -->
+              
+             <!--  right side  -->
+              <path d="M 720 420 C 750 500, 760 650, 700 700" stroke="black" fill="transparent"/>
+              
+              <path d="M 720 420 C 720 420, 690 330, 630 360" stroke="black" fill="transparent"/>
+              
+            <!--   <path d="M 710 420 C 710 420, 690 330, 630 360" stroke="black" fill="transparent"/> -->
+              
+             <!--  top  -->
+              <path d="M 370 360 C 400 390, 600 390, 630 360" stroke="black" fill="transparent"/>
+              
+              <path d="M 370 360 C 300 320, 280 420, 280 420" stroke="black" fill="transparent"/>
+              
+              
+            </svg>
+
         <button id="left_button">left</button>
 
         <div class="body__screen">
+            <p>placeholder</p>
             <!-- <div id="screen__start">
 
             </div>
@@ -34,7 +82,8 @@
 
         <button id="home_button">home</button>
         <button id="enter_button">enter</button>
-        <button></button>
+        <button>clock</button>
+        
 
     </section>
     
