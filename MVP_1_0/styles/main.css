@@ -66,20 +66,6 @@ h1 {
     padding: 10px;
 }
 
-.body__screen {
-    justify-self: center;
-    height: 300px;
-    width: 400px;
-    margin: 0 0 60px 7px;
-    border-radius: 2%;
-    
-    /* display: flex;
-    align-self: center; */
-    background-color: olive;
-
-}
-
-
 .plastic__body__bottom {
     height: 70%;
     width: 75%;
@@ -94,4 +80,58 @@ h1 {
 .plastic__body__bottom > button{
     margin: 20px;
     padding: 21px;
+}
+
+
+.body__screen {
+    justify-self: center;
+    height: 300px;
+    width: 400px;
+    margin: 0 0 60px 7px;
+    border-radius: 2%;
+    
+    /* display: flex;
+    align-self: center; */
+    background-color: olive;
+
+}
+
+.screen {
+
+    background-color: rgb(78, 78, 49);
+
+
+}
+
+.start {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+
+
+
+}
+.start > h2 {
+    padding: 30px 0 0 30px;
+
+}
+.start > h3 {
+    padding: 0 0 0 30px;
+
+}
+
+.start > input {
+    margin: 36px 0 77px 30px;
+    padding: 5px;
+    width: 50%;
+    font-size: 30px;
+
+}
+
+.start > img {
+    height: 116px;
+    /* padding: 30px 0 0 50px; */
+    box-sizing: border-box;
+
 }
