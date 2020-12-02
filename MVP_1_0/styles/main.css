@@ -45,14 +45,6 @@ svg ellipse:last-of-type {
 
 }
 
-.body__screen {
-
-    height: 300px;
-    width: 400px;
-    /* display: flex;
-    align-self: center; */
-
-}
 .plastic__body__top {
     height: 70%;
     width: 75%;
@@ -61,5 +53,23 @@ svg ellipse:last-of-type {
     justify-content: space-around;
     align-items: flex-end; 
 
+
+}
+
+.plastic__body__top > button{
+    margin: 0 0 128px 0 ;
+    padding: 10px;
+}
+
+.body__screen {
+    justify-self: center;
+    height: 300px;
+    width: 400px;
+    margin: 0 0 60px 7px;
+    border-radius: 2%;
+    
+    /* display: flex;
+    align-self: center; */
+    background-color: olive;
 
 }
