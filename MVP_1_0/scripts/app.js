@@ -89,92 +89,86 @@ let curScreen = screens[0];
     
 } */
 
-const checkScreen = function checkScreen(event) {
+const checkScreenEnter = function checkScreenEnter(event) {
 
-    if (event.target.id !== "enter__button") {
-
-        if (event.target.id === "right__button") {
-
-            if (curScreen === "home"){
-
-                console.log(screens.indexOf("home"));
-                const nextScreen = screens.indexOf("home")+1;
-                changeScreen(nextScreen);
-                
-            }else if (curScreen === "feed"){
-
-                const nextScreen = screens.indexOf("feed")+1;
-                changeScreen(nextScreen);
-                
-            }else if (curScreen === "sleep"){
-                
-                const nextScreen = screens.indexOf("sleep")+1;
-                changeScreen(nextScreen);
-                
-            }else if (curScreen === "play"){
-                
-                const nextScreen = screens.length - screens.indexOf("play");
-                changeScreen(nextScreen);
-                
-            }
-            
-            
-        } else if(event.target.id === "left__button"){
-            
-            if (curScreen === "home"){
-
-                const nextScreen = screens.length - screens.indexOf("home");
-                changeScreen(nextScreen);
-                
-            }else if (curScreen === "play"){
-                
-                const nextScreen = screens.indexOf("play")-1;
-                changeScreen(nextScreen);
-                
-            }else if (curScreen === "sleep"){
-               
-                const nextScreen = screens.indexOf("sleep")-1;
-                changeScreen(nextScreen);
-                
-            }else if (curScreen === "feed"){
-                
-                const nextScreen = screens.indexOf("feed")-1;
-                changeScreen(nextScreen);
-                
-            }
-
-            
-        }
-
-
+    if (curScreen === "start") {
+        test.setName();
+        curScreen= screens[1];
+        startTamagochi();
+        updateScreen(curScreen);
         
-    } else {
-
-        if (curScreen === "start") {
-            test.setName();
-            curScreen= screens[1];
-            startTamagochi();
-            updateScreen(curScreen);
-            
-        } else if (curScreen === "home"){
-            updateScreen(curScreen);
-            
-        }else if (curScreen === "feed"){
-            test.feed(1);
-            updateScreen(curScreen);
-            
-        }else if (curScreen === "sleep"){
-            test.sleep(1);
-            updateScreen(curScreen);
-            
-        }else if (curScreen === "play"){
-            test.play(1);
-            updateScreen(curScreen);
-            
-        }
+    } else if (curScreen === "home"){
+        updateScreen(curScreen);
         
+    }else if (curScreen === "feed"){
+        test.feed(1);
+        updateScreen(curScreen);
+        
+    }else if (curScreen === "sleep"){
+        test.sleep(1);
+        updateScreen(curScreen);
+        
+    }else if (curScreen === "play"){
+        test.play(1);
+        updateScreen(curScreen);   
     }
 
+}
+
+const checkScreenSides = function checkScreenSides(event) {
+
+    if (event.target.id === "right__button") {
+
+        if (curScreen === "home"){
+
+            console.log(screens.indexOf("home"));
+            const nextScreen = screens.indexOf("home")+1;
+            changeScreen(nextScreen);
+            
+        }else if (curScreen === "feed"){
+
+            const nextScreen = screens.indexOf("feed")+1;
+            changeScreen(nextScreen);
+            
+        }else if (curScreen === "sleep"){
+            
+            const nextScreen = screens.indexOf("sleep")+1;
+            changeScreen(nextScreen);
+            
+        }else if (curScreen === "play"){
+            
+            const nextScreen = screens.length - screens.indexOf("play");
+            changeScreen(nextScreen);
+            
+        }
+        
+        
+    } else if(event.target.id === "left__button"){
+        
+        if (curScreen === "home"){
+
+            const nextScreen = screens.length - screens.indexOf("home");
+            changeScreen(nextScreen);
+            
+        }else if (curScreen === "play"){
+            
+            const nextScreen = screens.indexOf("play")-1;
+            changeScreen(nextScreen);
+            
+        }else if (curScreen === "sleep"){
+            
+            const nextScreen = screens.indexOf("sleep")-1;
+            changeScreen(nextScreen);
+            
+        }else if (curScreen === "feed"){
+            
+            const nextScreen = screens.indexOf("feed")-1;
+            changeScreen(nextScreen);
+            
+        }
+
+        
+    }
     
     
 }
@@ -270,25 +264,15 @@ const startTime = function startTime() {
     
 }
 
-
-/* const $screens = $(".screen");
-console.log($screens.eq(0));
-console.log($screens.eq(0).removeClass("off"));
-$screens.eq(0).removeClass("off");
-console.log($screens.eq(0).removeClass("off"));
-$screens.eq(0).addClass("on");
-$screens.eq(0).addClass("on");
-$screens.eq(0).addClass("on"); */
-
 //======================================= EVENT LISTENERS =========================
 
-$("#enter__button").on("click", checkScreen);
+$("#enter__button").on("click", checkScreenEnter);
 
-$("#home__button").on("click", () => {curScreen= screens[1]; changeScreen(curScreen); updateScreen(curScreen)});
+$("#home__button").on("click", () => changeScreen(screens.indexOf("home")));
 
-$("#right__button").on("click", checkScreen);
+$("#right__button").on("click", checkScreenSides);
 
-$("#left__button").on("click", checkScreen);
+$("#left__button").on("click", checkScreenSides);
 
 
 
