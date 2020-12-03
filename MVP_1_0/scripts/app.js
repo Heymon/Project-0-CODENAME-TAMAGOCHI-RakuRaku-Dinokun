@@ -40,7 +40,7 @@ class Tamagochi {
 
     setName = function setName() {
 
-        const $curInput = $(".screen").children("input");
+        const $curInput = $(".screen__start").children("input");
         this.name = $curInput.val();
         $curInput.val("");
         console.log(this);
@@ -216,9 +216,10 @@ const updateStats = function updateStats(screenOn) {
     const $name = $(`.${screenOn} h2`).first();
     //same as
     //const $name = $(`.${screenOn} h2:first-child`); for this situatioan cuz :first-child could return an array of all first childs
-    //console.log($name);
+    console.log($name);
+    console.log($name.text());
     $name.text(test.name);
-    
+    console.log(test.name);
     /* const $age = $(`.${screenOn}`).children("h2:last-of-type");
     $age.text(`AG. ${test.age}`); */
 
@@ -254,11 +255,11 @@ const timer = setInterval(example, 100); */
 
 const startTime = function startTime() {
 
-    const ageTime = setInterval(() => {test.ageOverTime(); updateAge(curScreen); }, 100000);
-    const hungerTime = setInterval(() => test.feed(-1), 10000);
-    const boredomTime = setInterval(() => test.play(-1), 5000);
-    const sleepnessTime = setInterval(() => test.sleep(-1), 30000);
-
+    /* const ageTime = setInterval(() => {test.ageOverTime(); updateAge(curScreen); }, 1000);
+    const hungerTime = setInterval(() => test.feed(-1), 1000);
+    const boredomTime = setInterval(() => test.play(-1), 1000);
+    const sleepnessTime = setInterval(() => test.sleep(-1), 1000);
+ */
     
     
 }
