@@ -81,8 +81,15 @@ let curScreen = screens[0];
 
 //======================================= FUNCTIONS =========================
 
-const checkScreen = function checkScreen(event) {
+/* const goHome = function goHome() {
 
+    curScreen= screens[1]; 
+    changeScreen(curScreen); 
+    updateStats(curScreen);
+    
+} */
+
+const checkScreen = function checkScreen(event) {
 
     if (event.target.id !== "enter__button") {
 
@@ -212,8 +219,10 @@ const updateStats = function updateStats(screenOn) {
     //console.log($name);
     $name.text(test.name);
     
-    const $age = $(`.${screenOn}`).children("h2:last-of-type");
-    $age.text(`AG. ${test.age}`);
+    /* const $age = $(`.${screenOn}`).children("h2:last-of-type");
+    $age.text(`AG. ${test.age}`); */
+
+    updateAge(screenOn);
     
     const $progresses = $(`.${screenOn}`).find("progress");
     //console.log($progresses);
@@ -222,6 +231,12 @@ const updateStats = function updateStats(screenOn) {
         $progresses.eq(i).val(test[`${$progresses.eq(i).attr("class")}`]);
         //console.log(test[`${$progresses.eq(i).attr("class")}`]);   
     }
+}
+
+const updateAge = function updateAge(screenOn) {
+    const $age = $(`.${screenOn}`).children("h2:last-of-type");
+    $age.text(`AG. ${test.age}`);
+    
 }
 
 
@@ -239,10 +254,10 @@ const timer = setInterval(example, 100); */
 
 const startTime = function startTime() {
 
-    const ageTime = setInterval(() => test.ageOverTime(), 1000);
-    const hungerTime = setInterval(() => test.feed(-1), 1000);
-    const boredomTime = setInterval(() => test.play(-1), 1000);
-    const sleepnessTime = setInterval(() => test.sleep(-1), 1000);
+    const ageTime = setInterval(() => {test.ageOverTime(); updateAge(curScreen); }, 100000);
+    const hungerTime = setInterval(() => test.feed(-1), 10000);
+    const boredomTime = setInterval(() => test.play(-1), 5000);
+    const sleepnessTime = setInterval(() => test.sleep(-1), 30000);
 
     
     
@@ -262,7 +277,7 @@ $screens.eq(0).addClass("on"); */
 
 $("#enter__button").on("click", checkScreen);
 
-$("#home__button").on("click", () => changeScreen(screens[1]));
+$("#home__button").on("click", () => {curScreen= screens[1]; changeScreen(curScreen); updateStats(curScreen)});
 
 $("#right__button").on("click", checkScreen);
 
