@@ -175,7 +175,19 @@ h1 {
     background-color: cyan;
     border-style: solid;
     border-color: cadetblue;
+    margin: 10px 0 0 0;
+    /* padding: 7px 0; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
+}
+
+.home meter {
+
+    height: 37px;
+    width: 80px;
+    
 }
 
 /* li > progress {

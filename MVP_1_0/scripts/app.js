@@ -260,12 +260,12 @@ const updateAge = function updateAge(screenOn) {
 
 const updateStats = function updateStats(screenOn) {
 
-    const $progresses = $(`.${screenOn}`).find("progress");
-    //console.log($progresses);
-    for (let i = 0; i < $progresses.length; i++) {
-        //console.log($progresses.eq(i).attr("class"));
-        $progresses.eq(i).val(test[`${$progresses.eq(i).attr("class")}`]);
-        //console.log(test[`${$progresses.eq(i).attr("class")}`]);   
+    const $meters = $(`.${screenOn}`).find("meter");
+    //console.log($meters);
+    for (let i = 0; i < $meters.length; i++) {
+        //console.log($meters.eq(i).attr("class"));
+        $meters.eq(i).val(test[`${$meters.eq(i).attr("class")}`]);
+        //console.log(test[`${$meters.eq(i).attr("class")}`]);   
     }
     
 }
