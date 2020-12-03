@@ -266,3 +266,9 @@ h1 {
     position: absolute;
     z-index: -2;
 }
+
+.pop__up {
+
+background-color: darkmagenta;
+
+}

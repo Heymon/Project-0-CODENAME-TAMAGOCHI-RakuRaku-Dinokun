@@ -98,6 +98,11 @@ class Tamagochi {
             clearInterval(intervalsArr[i]);
             
         }
+
+        changeScreen(screens.indexOf("home"));
+
+
+
         /* clearInterval(inageTime);
 
         clearInterval(hungerTime);
@@ -105,6 +110,8 @@ class Tamagochi {
         clearInterval(sleepnessTime); */
 
         console.log("died of " + descriptor);
+
+        popUpMessage("YOUOOUO let it DIEEE!")
 
     }
 
@@ -267,6 +274,30 @@ const updateStats = function updateStats(screenOn) {
         $meters.eq(i).val(test[`${$meters.eq(i).attr("class")}`]);
         //console.log(test[`${$meters.eq(i).attr("class")}`]);   
     }
+    
+}
+
+const popUpMessage = function popUpMessage(message) {
+
+    const $message = $(`<h1 class='pop__up'>${message} <br> Start Over ?</h1>`);
+
+    const $home = $(".home").append($message);
+
+    const stylings ={
+
+        "background-color": "red",
+        height: "100px",
+        width: "250px",
+        position: "absolute",
+        margin: "auto",
+        left: "0",
+        right: "0",
+        top: "0",
+        bottom: "0",
+        "z-index": "3"
+    };
+
+    $message.css(stylings);
     
 }
 
