@@ -66,6 +66,12 @@ class Tamagochi {
         
     }
 
+    ageOverTime = function ageOverTime() {
+        this.age+=1;
+        console.log(this.age);
+        
+    }
+
 
 }
 
@@ -76,11 +82,6 @@ let curScreen = screens[0];
 //======================================= FUNCTIONS =========================
 
 const checkScreen = function checkScreen(event) {
-
-    console.log(event.target.textContent);
-    console.log(event.target.innerHTML);
-    console.log(event.target.outerHTML);
-    console.log(event.target.id);
 
 
     if (event.target.id !== "enter__button") {
@@ -181,6 +182,8 @@ const startTamagochi = function startTamagochi() {
     const $home = $(".home");
     $home.removeClass("off");
     $home.addClass("on");
+
+    startTime();
     
 }
 
@@ -219,6 +222,27 @@ const updateStats = function updateStats(screenOn) {
         $progresses.eq(i).val(test[`${$progresses.eq(i).attr("class")}`]);
         //console.log(test[`${$progresses.eq(i).attr("class")}`]);   
     }
+}
+
+
+/* let time = 10;
+
+function example() {
+    time--;
+    console.log(time);
+    if (time === 0) {
+        clearInterval(timer)   
+    }
+}
+
+const timer = setInterval(example, 100); */
+
+const startTime = function startTime() {
+
+    const ageTime = setInterval(() => test.ageOverTime(), 1000);
+
+    
+    
 }
 
 
