@@ -50,12 +50,14 @@ class Tamagochi {
     feed = function feed (amount) {
         this.hunger+=amount;
         console.log(this.hunger);
+        this.checkDeath(this.hunger, "hunger");
     }
 
 
     sleep = function sleep (amount) {
         this.sleepness+=amount;
         console.log(this.sleepness);
+        this.checkDeath(this.sleepness, "sleepness");
         
     }
 
@@ -63,13 +65,47 @@ class Tamagochi {
     play = function play (amount) {
         this.boredom+=amount;
         console.log(this.boredom);
+        this.checkDeath(this.boredom, "boredom");
         
     }
 
     ageOverTime = function ageOverTime() {
         this.age++;
         console.log(this.age);
+        this.checkDeath(this.age, "age");
         
+    }
+
+    checkDeath = function checkDeath(value, description) {
+
+        if ( description === "age" && value > 100 ) {
+
+            this.die(description);
+            
+        }else {
+
+            if (value > 10 || value < 0) {
+
+                this.die(description);
+                
+            }   
+        }
+    }
+
+    die(descriptor){
+
+        for (let i = 0; i < intervalsArr.length; i++) {
+            clearInterval(intervalsArr[i]);
+            
+        }
+        /* clearInterval(inageTime);
+
+        clearInterval(hungerTime);
+        clearInterval(boredomTime);
+        clearInterval(sleepnessTime); */
+
+        console.log("died of " + descriptor);
+
     }
 
 
@@ -79,15 +115,9 @@ class Tamagochi {
 const screens = ["start", "home", "feed", "sleep", "play"];
 let curScreen = screens[0];
 
+const intervalsArr = [];
+
 //======================================= FUNCTIONS =========================
-
-/* const goHome = function goHome() {
-
-    curScreen= screens[1]; 
-    changeScreen(curScreen); 
-    updateScreen(curScreen);
-    
-} */
 
 const checkScreenEnter = function checkScreenEnter(event) {
 
@@ -255,11 +285,14 @@ const timer = setInterval(example, 100); */
 
 const startTime = function startTime() {
 
-    const ageTime = setInterval(() => {test.ageOverTime(); updateAge(curScreen);}, 10000);
+    const ageTime = setInterval(() => {test.ageOverTime(); updateAge(curScreen);}, 15000);//25min
+    intervalsArr.push(ageTime);
     const hungerTime = setInterval(() => {test.feed(-1); updateStats(curScreen);}, 10000);
+    intervalsArr.push(hungerTime);
     const boredomTime = setInterval(() => {test.play(-1); updateStats(curScreen);}, 5000);
-    const sleepnessTime = setInterval(() => {test.sleep(-1); updateStats(curScreen);}, 30000);
-
+    intervalsArr.push(boredomTime);
+    const sleepnessTime = setInterval(() => {test.sleep(-1); updateStats(curScreen);}, 12000);
+    intervalsArr.push(sleepnessTime);
     
     
 }
