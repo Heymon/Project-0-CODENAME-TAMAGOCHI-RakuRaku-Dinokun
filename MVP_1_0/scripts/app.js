@@ -97,24 +97,24 @@ const checkScreen = function checkScreen(event) {
 
             if (curScreen === "home"){
 
-                curScreen= screens[2];
-                changeScreen(curScreen);
-                updateScreen(curScreen);
+                console.log(screens.indexOf("home"));
+                const nextScreen = screens.indexOf("home")+1;
+                changeScreen(nextScreen);
                 
             }else if (curScreen === "feed"){
-                curScreen= screens[3];
-                changeScreen(curScreen);
-                updateScreen(curScreen);
+
+                const nextScreen = screens.indexOf("feed")+1;
+                changeScreen(nextScreen);
                 
             }else if (curScreen === "sleep"){
-                curScreen= screens[4];
-                changeScreen(curScreen);
-                updateScreen(curScreen);
+                
+                const nextScreen = screens.indexOf("sleep")+1;
+                changeScreen(nextScreen);
                 
             }else if (curScreen === "play"){
-                curScreen= screens[1];
-                changeScreen(curScreen);
-                updateScreen(curScreen);
+                
+                const nextScreen = screens.length - screens.indexOf("play");
+                changeScreen(nextScreen);
                 
             }
             
@@ -123,24 +123,23 @@ const checkScreen = function checkScreen(event) {
             
             if (curScreen === "home"){
 
-                curScreen= screens[4];
-                changeScreen(curScreen);
-                updateScreen(curScreen);
+                const nextScreen = screens.length - screens.indexOf("home");
+                changeScreen(nextScreen);
                 
             }else if (curScreen === "play"){
-                curScreen= screens[3];
-                changeScreen(curScreen);
-                updateScreen(curScreen);
+                
+                const nextScreen = screens.indexOf("play")-1;
+                changeScreen(nextScreen);
                 
             }else if (curScreen === "sleep"){
-                curScreen= screens[2];
-                changeScreen(curScreen);
-                updateScreen(curScreen);
+               
+                const nextScreen = screens.indexOf("sleep")-1;
+                changeScreen(nextScreen);
                 
             }else if (curScreen === "feed"){
-                curScreen= screens[1];
-                changeScreen(curScreen);
-                updateScreen(curScreen);
+                
+                const nextScreen = screens.indexOf("feed")-1;
+                changeScreen(nextScreen);
                 
             }
 
@@ -194,12 +193,14 @@ const startTamagochi = function startTamagochi() {
     
 }
 
-const changeScreen = function changeScreen(screenOn) {
+const changeScreen = function changeScreen(indexOfScreen) {
+
+    curScreen= screens[indexOfScreen];
 
     //console.log(screenOn);
     const $screens = $(".screen");
     for (let i = 0; i < $screens.length; i++) {
-        if ($screens.eq(i).hasClass (screenOn)) {
+        if ($screens.eq(i).hasClass (curScreen)) {
             $screens.eq(i).removeClass("off");
             $screens.eq(i).addClass("on");
             
@@ -209,6 +210,8 @@ const changeScreen = function changeScreen(screenOn) {
 
         }   
     }
+
+    updateScreen(curScreen);
 }
 
 const updateScreen = function updateScreen(screenOn) {
@@ -221,13 +224,6 @@ const updateScreen = function updateScreen(screenOn) {
 
     updateAge(screenOn);
     
-    /* const $progresses = $(`.${screenOn}`).find("progress");
-    //console.log($progresses);
-    for (let i = 0; i < $progresses.length; i++) {
-        //console.log($progresses.eq(i).attr("class"));
-        $progresses.eq(i).val(test[`${$progresses.eq(i).attr("class")}`]);
-        //console.log(test[`${$progresses.eq(i).attr("class")}`]);   
-    } */
 
     updateStats(screenOn);
 }
