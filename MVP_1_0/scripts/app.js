@@ -47,27 +47,27 @@ class Tamagochi {
         
     }
 
-    feed = function feed () {
-        this.hunger--;
+    feed = function feed (amount) {
+        this.hunger+=amount;
         console.log(this.hunger);
     }
 
 
-    sleep = function sleep () {
-        this.sleepness--;
+    sleep = function sleep (amount) {
+        this.sleepness+=amount;
         console.log(this.sleepness);
         
     }
 
 
-    play = function play () {
-        this.boredom--;
+    play = function play (amount) {
+        this.boredom+=amount;
         console.log(this.boredom);
         
     }
 
     ageOverTime = function ageOverTime() {
-        this.age+=1;
+        this.age++;
         console.log(this.age);
         
     }
@@ -154,15 +154,15 @@ const checkScreen = function checkScreen(event) {
             updateStats(curScreen);
             
         }else if (curScreen === "feed"){
-            test.feed();
+            test.feed(1);
             updateStats(curScreen);
             
         }else if (curScreen === "sleep"){
-            test.sleep();
+            test.sleep(1);
             updateStats(curScreen);
             
         }else if (curScreen === "play"){
-            test.play();
+            test.play(1);
             updateStats(curScreen);
             
         }
@@ -240,6 +240,9 @@ const timer = setInterval(example, 100); */
 const startTime = function startTime() {
 
     const ageTime = setInterval(() => test.ageOverTime(), 1000);
+    const hungerTime = setInterval(() => test.feed(-1), 1000);
+    const boredomTime = setInterval(() => test.play(-1), 1000);
+    const sleepnessTime = setInterval(() => test.sleep(-1), 1000);
 
     
     
