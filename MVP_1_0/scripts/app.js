@@ -41,12 +41,8 @@ class Tamagochi {
     setName = function setName() {
 
         const $curInput = $(".screen").children("input");
-    
         this.name = $curInput.val();
-
         $curInput.val("");
-    
-        console.log(this.name);
         console.log(this);
         
     }
@@ -62,28 +58,44 @@ let curScreen = screens[0];
 
 const checkScreen = function checkScreen(event) {
 
-    if (curScreen === "start") {
-        test.setName();
-        curScreen= screens[1];
-        changeScreen(curScreen);
-        updateStats(curScreen);
+    console.log(event.target.textContent);
+    console.log(event.target.innerHTML);
+    console.log(event.target.outerHTML);
+    console.log(event.target.id);
+
+
+    if (event.target.id !== "enter__button") {
+
+
         
-    } else if (curScreen === "home"){
-        updateStats(curScreen);
-        
-    }else if (curScreen === "feed"){
-        
-    }else if (curScreen === "sleep"){
-        
-    }else if (curScreen === "play"){
+    } else {
+
+        if (curScreen === "start") {
+            test.setName();
+            curScreen= screens[1];
+            changeScreen(curScreen);
+            updateStats(curScreen);
+            
+        } else if (curScreen === "home"){
+            updateStats(curScreen);
+            
+        }else if (curScreen === "feed"){
+            
+        }else if (curScreen === "sleep"){
+            
+        }else if (curScreen === "play"){
+            
+        }
         
     }
+
+    
     
 }
 
 const changeScreen = function changeScreen(screenOn) {
 
-    console.log(screenOn);
+    //console.log(screenOn);
     const $screens = $(".screen");
     for (let i = 0; i < $screens.length; i++) {
         if ($screens.eq(i).hasClass (screenOn)) {
@@ -103,25 +115,18 @@ const updateStats = function updateStats(screenOn) {
     const $name = $(`.${screenOn} h2`).first();
     //same as
     //const $name = $(`.${screenOn} h2:first-child`); for this situatioan cuz :first-child could return an array of all first childs
-    console.log($name);
-
+    //console.log($name);
     $name.text(test.name);
     
     const $age = $(`.${screenOn}`).children("h2:last-of-type");
-
-    console.log($age);
-
     $age.text(`AG. ${test.age}`);
     
     const $progresses = $(`.${screenOn}`).find("progress");
     console.log($progresses);
     for (let i = 0; i < $progresses.length; i++) {
         console.log($progresses.eq(i).attr("class"));
-        $progresses.eq(i).val(test[`${$progresses.eq(i).attr("class")}`]);
-        
+        $progresses.eq(i).val(test[`${$progresses.eq(i).attr("class")}`]);   
     }
-
-    
 }
 
 
@@ -137,6 +142,14 @@ $screens.eq(0).addClass("on"); */
 //======================================= EVENT LISTENERS =========================
 
 $("#enter__button").on("click", checkScreen);
+
+$("#home__button").on("click", () => changeScreen(screens[1]));
+
+$("#right__button").on("click", checkScreen);
+
+$("#left__button").on("click", checkScreen);
+
+
 
 /* const $curInput = $(".screen").children("input");
 
