@@ -31,8 +31,8 @@ class Tamagochi {
 
         this.age=0;
         this.hunger=5;
-        this.sleep=5;
-        this.boredom=5;
+        this.sleep=6;
+        this.boredom=7;
         this.isAlive=true;
         this.state=["child", "teenager","adult"];
     }
@@ -66,8 +66,10 @@ const checkScreen = function checkScreen(event) {
         test.setName();
         curScreen= screens[1];
         changeScreen(curScreen);
+        updateStats(curScreen);
         
     } else if (curScreen === "home"){
+        updateStats(curScreen);
         
     }else if (curScreen === "feed"){
         
@@ -92,7 +94,30 @@ const changeScreen = function changeScreen(screenOn) {
             $screens.eq(i).removeClass("on");
             $screens.eq(i).addClass("off");
 
-        }
+        }   
+    }
+}
+
+const updateStats = function updateStats(screenOn) {
+
+    const $name = $(`.${screenOn} h2`).first();
+    //same as
+    //const $name = $(`.${screenOn} h2:first-child`); for this situatioan cuz :first-child could return an array of all first childs
+    console.log($name);
+
+    $name.text(test.name);
+    
+    const $age = $(`.${screenOn}`).children("h2:last-of-type");
+
+    console.log($age);
+
+    $age.text(`AG. ${test.age}`);
+    
+    const $progresses = $(`.${screenOn}`).find("progress");
+    console.log($progresses);
+    for (let i = 0; i < $progresses.length; i++) {
+        console.log($progresses.eq(i).attr("class"));
+        $progresses.eq(i).val(test[`${$progresses.eq(i).attr("class")}`]);
         
     }
 
