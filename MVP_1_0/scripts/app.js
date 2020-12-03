@@ -14,9 +14,9 @@ console.log("app.js load");
 
     //method
         //startmeters
-        //hunger
+        //feed
         //put to sleep
-        //boredom
+        //play
         //die
 
 
@@ -51,7 +51,7 @@ class Tamagochi {
 }
 
 
-const screens = ["start", "home", "hunger", "sleep", "boredom"];
+const screens = ["start", "home", "feed", "sleep", "play"];
 let curScreen = screens[0];
 
 //======================================= FUNCTIONS =========================
@@ -74,7 +74,7 @@ const checkScreen = function checkScreen(event) {
                 changeScreen(curScreen);
                 updateStats(curScreen);
                 
-            }else if (curScreen === "hunger"){
+            }else if (curScreen === "feed"){
                 curScreen= screens[3];
                 changeScreen(curScreen);
                 updateStats(curScreen);
@@ -84,7 +84,7 @@ const checkScreen = function checkScreen(event) {
                 changeScreen(curScreen);
                 updateStats(curScreen);
                 
-            }else if (curScreen === "boredom"){
+            }else if (curScreen === "play"){
                 curScreen= screens[1];
                 changeScreen(curScreen);
                 updateStats(curScreen);
@@ -100,7 +100,7 @@ const checkScreen = function checkScreen(event) {
                 changeScreen(curScreen);
                 updateStats(curScreen);
                 
-            }else if (curScreen === "boredom"){
+            }else if (curScreen === "play"){
                 curScreen= screens[3];
                 changeScreen(curScreen);
                 updateStats(curScreen);
@@ -110,7 +110,7 @@ const checkScreen = function checkScreen(event) {
                 changeScreen(curScreen);
                 updateStats(curScreen);
                 
-            }else if (curScreen === "hunger"){
+            }else if (curScreen === "feed"){
                 curScreen= screens[1];
                 changeScreen(curScreen);
                 updateStats(curScreen);
@@ -127,23 +127,35 @@ const checkScreen = function checkScreen(event) {
         if (curScreen === "start") {
             test.setName();
             curScreen= screens[1];
-            changeScreen(curScreen);
+            startTamagochi();
             updateStats(curScreen);
             
         } else if (curScreen === "home"){
             updateStats(curScreen);
             
-        }else if (curScreen === "hunger"){
+        }else if (curScreen === "feed"){
             
         }else if (curScreen === "sleep"){
             
-        }else if (curScreen === "boredom"){
+        }else if (curScreen === "play"){
             
         }
         
     }
 
     
+    
+}
+
+const startTamagochi = function startTamagochi() {
+
+    const $start = $(".screen__start");
+    $start.removeClass("on");
+    $start.addClass("off");
+
+    const $home = $(".home");
+    $home.removeClass("off");
+    $home.addClass("on");
     
 }
 
@@ -179,7 +191,8 @@ const updateStats = function updateStats(screenOn) {
     console.log($progresses);
     for (let i = 0; i < $progresses.length; i++) {
         console.log($progresses.eq(i).attr("class"));
-        $progresses.eq(i).val(test[`${$progresses.eq(i).attr("class")}`]);   
+        $progresses.eq(i).val(test[`${$progresses.eq(i).attr("class")}`]);
+        console.log(test[`${$progresses.eq(i).attr("class")}`]);   
     }
 }
 

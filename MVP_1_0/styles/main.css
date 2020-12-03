@@ -103,7 +103,7 @@ h1 {
 
 }
 
-.start {
+.screen__start {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -112,16 +112,16 @@ h1 {
 
 
 }
-.start > h2 {
+.screen__start > h2 {
     padding: 30px 0 0 30px;
 
 }
-.start > h3 {
+.screen__start > h3 {
     padding: 0 0 0 30px;
 
 }
 
-.start > input {
+.screen__start > input {
     margin: 36px 0 77px 30px;
     padding: 5px;
     width: 50%;
@@ -129,7 +129,7 @@ h1 {
 
 }
 
-.start > img {
+.screen__start > img {
     height: 116px;
     /* padding: 30px 0 0 50px; */
     box-sizing: border-box;
@@ -140,21 +140,18 @@ h1 {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-
-
-
 }
 
 .home > h2:first-child {
-    align-self: start;
-    justify-content: center;
+    /* align-self: start;
+    justify-content: center; */
     padding: 30px 0 0 50px;
 
 }
 
 .home > h2:last-of-type {
-    align-self: start;
-    justify-content: center;
+    /* align-self: start;
+    justify-content: center; */
     margin: 50px 0 0 116px;
 
 }
@@ -174,7 +171,7 @@ h1 {
     
 }
 
-.home > ul > li {
+.home li {
     background-color: cyan;
     border-style: solid;
     border-color: cadetblue;
@@ -185,6 +182,65 @@ h1 {
     width: 56%;
     margin: 0 0 0 13px;
 } */
+
+.screen:not(.home) {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.screen:not(.home) > h2:first-child {
+    /* align-self: start;
+    justify-content: center; */
+    padding: 30px 0 0 50px;
+
+}
+
+.screen:not(.home) > h2:last-of-type {
+    /* align-self: start;
+    justify-content: center; */
+    margin: 50px 0 0 116px;
+
+}
+
+
+.screen:not(.home) > img {
+    height: 156px;
+
+    box-sizing: border-box;
+
+}
+
+.screen:not(.home) > ul {
+
+    list-style-type: none;
+    width: 42%;
+    
+}
+
+.screen:not(.home) li:first-child {
+    background-color: cyan;
+    border-style: solid;
+    border-color: cadetblue;
+
+}
+
+.screen:not(.home) li:last-child {
+    background-color: cyan;
+    border-style: solid;
+    border-color: cadetblue;
+    margin: 50px 0 0 0;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.screen:not(.home) button {
+    color: darkmagenta;
+    padding: 15px;
+    /* margin: 0 0 0 46px; */
+}
 
 .on {
     opacity: 1;
