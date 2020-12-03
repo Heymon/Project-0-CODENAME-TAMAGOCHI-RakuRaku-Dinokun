@@ -14,9 +14,9 @@ console.log("app.js load");
 
     //method
         //startmeters
-        //feed
+        //hunger
         //put to sleep
-        //play
+        //boredom
         //die
 
 
@@ -51,7 +51,7 @@ class Tamagochi {
 }
 
 
-const screens = ["start", "home", "feed", "sleep", "play"];
+const screens = ["start", "home", "hunger", "sleep", "boredom"];
 let curScreen = screens[0];
 
 //======================================= FUNCTIONS =========================
@@ -66,6 +66,60 @@ const checkScreen = function checkScreen(event) {
 
     if (event.target.id !== "enter__button") {
 
+        if (event.target.id === "right__button") {
+
+            if (curScreen === "home"){
+
+                curScreen= screens[2];
+                changeScreen(curScreen);
+                updateStats(curScreen);
+                
+            }else if (curScreen === "hunger"){
+                curScreen= screens[3];
+                changeScreen(curScreen);
+                updateStats(curScreen);
+                
+            }else if (curScreen === "sleep"){
+                curScreen= screens[4];
+                changeScreen(curScreen);
+                updateStats(curScreen);
+                
+            }else if (curScreen === "boredom"){
+                curScreen= screens[1];
+                changeScreen(curScreen);
+                updateStats(curScreen);
+                
+            }
+            
+            
+        } else if(event.target.id === "left__button"){
+            
+            if (curScreen === "home"){
+
+                curScreen= screens[4];
+                changeScreen(curScreen);
+                updateStats(curScreen);
+                
+            }else if (curScreen === "boredom"){
+                curScreen= screens[3];
+                changeScreen(curScreen);
+                updateStats(curScreen);
+                
+            }else if (curScreen === "sleep"){
+                curScreen= screens[2];
+                changeScreen(curScreen);
+                updateStats(curScreen);
+                
+            }else if (curScreen === "hunger"){
+                curScreen= screens[1];
+                changeScreen(curScreen);
+                updateStats(curScreen);
+                
+            }
+
+            
+        }
+
 
         
     } else {
@@ -79,11 +133,11 @@ const checkScreen = function checkScreen(event) {
         } else if (curScreen === "home"){
             updateStats(curScreen);
             
-        }else if (curScreen === "feed"){
+        }else if (curScreen === "hunger"){
             
         }else if (curScreen === "sleep"){
             
-        }else if (curScreen === "play"){
+        }else if (curScreen === "boredom"){
             
         }
         
