@@ -85,7 +85,7 @@ let curScreen = screens[0];
 
     curScreen= screens[1]; 
     changeScreen(curScreen); 
-    updateStats(curScreen);
+    updateScreen(curScreen);
     
 } */
 
@@ -99,22 +99,22 @@ const checkScreen = function checkScreen(event) {
 
                 curScreen= screens[2];
                 changeScreen(curScreen);
-                updateStats(curScreen);
+                updateScreen(curScreen);
                 
             }else if (curScreen === "feed"){
                 curScreen= screens[3];
                 changeScreen(curScreen);
-                updateStats(curScreen);
+                updateScreen(curScreen);
                 
             }else if (curScreen === "sleep"){
                 curScreen= screens[4];
                 changeScreen(curScreen);
-                updateStats(curScreen);
+                updateScreen(curScreen);
                 
             }else if (curScreen === "play"){
                 curScreen= screens[1];
                 changeScreen(curScreen);
-                updateStats(curScreen);
+                updateScreen(curScreen);
                 
             }
             
@@ -125,22 +125,22 @@ const checkScreen = function checkScreen(event) {
 
                 curScreen= screens[4];
                 changeScreen(curScreen);
-                updateStats(curScreen);
+                updateScreen(curScreen);
                 
             }else if (curScreen === "play"){
                 curScreen= screens[3];
                 changeScreen(curScreen);
-                updateStats(curScreen);
+                updateScreen(curScreen);
                 
             }else if (curScreen === "sleep"){
                 curScreen= screens[2];
                 changeScreen(curScreen);
-                updateStats(curScreen);
+                updateScreen(curScreen);
                 
             }else if (curScreen === "feed"){
                 curScreen= screens[1];
                 changeScreen(curScreen);
-                updateStats(curScreen);
+                updateScreen(curScreen);
                 
             }
 
@@ -155,22 +155,22 @@ const checkScreen = function checkScreen(event) {
             test.setName();
             curScreen= screens[1];
             startTamagochi();
-            updateStats(curScreen);
+            updateScreen(curScreen);
             
         } else if (curScreen === "home"){
-            updateStats(curScreen);
+            updateScreen(curScreen);
             
         }else if (curScreen === "feed"){
             test.feed(1);
-            updateStats(curScreen);
+            updateScreen(curScreen);
             
         }else if (curScreen === "sleep"){
             test.sleep(1);
-            updateStats(curScreen);
+            updateScreen(curScreen);
             
         }else if (curScreen === "play"){
             test.play(1);
-            updateStats(curScreen);
+            updateScreen(curScreen);
             
         }
         
@@ -211,20 +211,35 @@ const changeScreen = function changeScreen(screenOn) {
     }
 }
 
-const updateStats = function updateStats(screenOn) {
+const updateScreen = function updateScreen(screenOn) {
 
     const $name = $(`.${screenOn} h2`).first();
     //same as
     //const $name = $(`.${screenOn} h2:first-child`); for this situatioan cuz :first-child could return an array of all first childs
-    console.log($name);
-    console.log($name.text());
+    //console.log($name);
     $name.text(test.name);
-    console.log(test.name);
-    /* const $age = $(`.${screenOn}`).children("h2:last-of-type");
-    $age.text(`AG. ${test.age}`); */
 
     updateAge(screenOn);
     
+    /* const $progresses = $(`.${screenOn}`).find("progress");
+    //console.log($progresses);
+    for (let i = 0; i < $progresses.length; i++) {
+        //console.log($progresses.eq(i).attr("class"));
+        $progresses.eq(i).val(test[`${$progresses.eq(i).attr("class")}`]);
+        //console.log(test[`${$progresses.eq(i).attr("class")}`]);   
+    } */
+
+    updateStats(screenOn);
+}
+
+const updateAge = function updateAge(screenOn) {
+    const $age = $(`.${screenOn}`).children("h2:last-of-type");
+    $age.text(`AG. ${test.age}`);
+    
+}
+
+const updateStats = function updateStats(screenOn) {
+
     const $progresses = $(`.${screenOn}`).find("progress");
     //console.log($progresses);
     for (let i = 0; i < $progresses.length; i++) {
@@ -232,11 +247,6 @@ const updateStats = function updateStats(screenOn) {
         $progresses.eq(i).val(test[`${$progresses.eq(i).attr("class")}`]);
         //console.log(test[`${$progresses.eq(i).attr("class")}`]);   
     }
-}
-
-const updateAge = function updateAge(screenOn) {
-    const $age = $(`.${screenOn}`).children("h2:last-of-type");
-    $age.text(`AG. ${test.age}`);
     
 }
 
@@ -255,11 +265,11 @@ const timer = setInterval(example, 100); */
 
 const startTime = function startTime() {
 
-    /* const ageTime = setInterval(() => {test.ageOverTime(); updateAge(curScreen); }, 1000);
-    const hungerTime = setInterval(() => test.feed(-1), 1000);
-    const boredomTime = setInterval(() => test.play(-1), 1000);
-    const sleepnessTime = setInterval(() => test.sleep(-1), 1000);
- */
+    const ageTime = setInterval(() => {test.ageOverTime(); updateAge(curScreen);}, 10000);
+    const hungerTime = setInterval(() => {test.feed(-1); updateStats(curScreen);}, 10000);
+    const boredomTime = setInterval(() => {test.play(-1); updateStats(curScreen);}, 5000);
+    const sleepnessTime = setInterval(() => {test.sleep(-1); updateStats(curScreen);}, 30000);
+
     
     
 }
@@ -278,7 +288,7 @@ $screens.eq(0).addClass("on"); */
 
 $("#enter__button").on("click", checkScreen);
 
-$("#home__button").on("click", () => {curScreen= screens[1]; changeScreen(curScreen); updateStats(curScreen)});
+$("#home__button").on("click", () => {curScreen= screens[1]; changeScreen(curScreen); updateScreen(curScreen)});
 
 $("#right__button").on("click", checkScreen);
 
