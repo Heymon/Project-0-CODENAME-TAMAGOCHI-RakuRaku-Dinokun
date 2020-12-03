@@ -31,7 +31,7 @@ class Tamagochi {
 
         this.age=0;
         this.hunger=5;
-        this.sleep=6;
+        this.sleepness=6;
         this.boredom=7;
         this.isAlive=true;
         this.state=["child", "teenager","adult"];
@@ -44,6 +44,25 @@ class Tamagochi {
         this.name = $curInput.val();
         $curInput.val("");
         console.log(this);
+        
+    }
+
+    feed = function feed () {
+        this.hunger--;
+        console.log(this.hunger);
+    }
+
+
+    sleep = function sleep () {
+        this.sleepness--;
+        console.log(this.sleepness);
+        
+    }
+
+
+    play = function play () {
+        this.boredom--;
+        console.log(this.boredom);
         
     }
 
@@ -134,10 +153,16 @@ const checkScreen = function checkScreen(event) {
             updateStats(curScreen);
             
         }else if (curScreen === "feed"){
+            test.feed();
+            updateStats(curScreen);
             
         }else if (curScreen === "sleep"){
+            test.sleep();
+            updateStats(curScreen);
             
         }else if (curScreen === "play"){
+            test.play();
+            updateStats(curScreen);
             
         }
         
@@ -188,11 +213,11 @@ const updateStats = function updateStats(screenOn) {
     $age.text(`AG. ${test.age}`);
     
     const $progresses = $(`.${screenOn}`).find("progress");
-    console.log($progresses);
+    //console.log($progresses);
     for (let i = 0; i < $progresses.length; i++) {
-        console.log($progresses.eq(i).attr("class"));
+        //console.log($progresses.eq(i).attr("class"));
         $progresses.eq(i).val(test[`${$progresses.eq(i).attr("class")}`]);
-        console.log(test[`${$progresses.eq(i).attr("class")}`]);   
+        //console.log(test[`${$progresses.eq(i).attr("class")}`]);   
     }
 }
 
