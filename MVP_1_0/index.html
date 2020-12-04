@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- NES.css -->
+  <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
   <!-- Main CSS -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- jQuery -->
@@ -65,7 +67,7 @@
                     <h3>This is your new Tamagochi!</h3>
                     
                     <h3>Enter it name below</h3>
-                    <input type="text">
+                    <input type="text" class="nes-input">
 
                     <img src="images/pikachu_sprite.gif" alt="tamagochi">
 
@@ -87,6 +89,7 @@
                     <img src="images/pikachu_sprite.gif" alt="tamagochi">
                     <ul>
                         <li>hunger<meter class="hunger" value="5" max="10"></meter></li>
+                        <li class="spacer"></li>
                         <li><button>FEED</button></li>
                         
                     </ul>
@@ -99,6 +102,7 @@
                     <ul>
 
                         <li>sleep<meter class="sleepness"value="5" max="10"></meter></li>
+                        <li class="spacer"></li><!-- TODO spacer not working yet remember to fix it all of them -->
                         <li><button>TURN LIGHT OFF</button></li>
 
                     </ul>
@@ -110,8 +114,8 @@
                     <img src="images/pikachu_sprite.gif" alt="tamagochi">
                     <ul>
 
-
                         <li>boredom<meter class="boredom" value="5" max="10"></meter></li>
+                        <li class="spacer"></li>
                         <li><button>PLAY</button></li>
                     </ul>
 
@@ -132,3 +136,23 @@
     
 </body>
 </html>
+
+
+<!-- credits:
+
+3d pikachu sprite by Cortoony : https://www.deviantart.com/cortoony/art/Detective-Pikachu-824807060
+
+pikachu with wing by Joshua Johnson : https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.lowgif.com%2Ftag%2Fpikachu-sprite-gif&psig=AOvVaw03w6d0R95-vfEnJNZj6EJE&ust=1607134390550000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCJCcp5ihs-0CFQAAAAAdAAAAABAD
+
+pikachu with baloons : https://www.google.com/url?sa=i&url=https%3A%2F%2Fgfycat.com%2Fstickers%2Fsearch%2Fpok%25C3%25A9mon%2Banimation&psig=AOvVaw03w6d0R95-vfEnJNZj6EJE&ust=1607134390550000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCJCcp5ihs-0CFQAAAAAdAAAAABAl
+
+pokemon tower ghost by Cortoony : https://www.deviantart.com/cortoony/art/Pokemon-Tower-Ghost-822241446
+
+haunter by Cortoony : https://www.deviantart.com/cortoony/art/r-b-haunter-821060105
+
+
+missingno by Cortoony : https://www.deviantart.com/cortoony/art/r-b-haunter-821060105
+
+gengar by Cortoony : https://www.deviantart.com/cortoony/art/r-b-gengar-821672470
+
+-->
