@@ -132,6 +132,8 @@ h1 {
 
 .screen__start > aside {
     height: 116px;
+    max-width: 169px;
+    min-width: 169px;
     display: flex;
     align-items: center;
     justify-content: center;
