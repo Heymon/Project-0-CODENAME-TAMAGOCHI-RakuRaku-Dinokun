@@ -294,7 +294,14 @@ const updateStats = function updateStats(screenOn) {
 
 const popUpMessage = function popUpMessage(message) {
 
-    const $message = $(`<h1 class='pop__up'>${message} <br> Start Over ?</h1>`);
+    //const $message = $(`<h1 class='pop__up'>${message} <br> Start Over ?</h1>`);
+
+    const $message = $(`<section class="pop__up">
+                            <img src="images/pikachu_wing.gif" alt="Death">
+                            <div class="nes-balloon from-left">
+                                <p>${message} <br> Start Over ?</p>
+                            </div>
+                        </section>`);
 
     const $home = $(".home").append($message);
 
@@ -310,6 +317,10 @@ const popUpMessage = function popUpMessage(message) {
     };
 
     $message.css(stylings);
+    console.log($message);
+    console.log($message.children("section"));
+    setTimeout(() => $message.addClass("poped__up"), 500);
+
     
 }
 

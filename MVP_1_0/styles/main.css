@@ -1,3 +1,9 @@
+:root{
+    --screen-color: rgb(78, 78, 49);
+
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -92,14 +98,14 @@ h1 {
     
     /* display: flex;
     align-self: center; */
-    background-color: olive;
+    background-color: var(--screen-color);
     overflow: hidden;
 
 }
 
 .screen {
 
-    background-color: rgb(78, 78, 49);
+    /* background-color: var(--screen-color); */
 
 
 }
@@ -108,9 +114,6 @@ h1 {
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-
-
-
 
 }
 .screen__start > h2 {
@@ -182,7 +185,7 @@ h1 {
 
 }
 
-.home img {
+.home>aside>img {
     height: 100%;
     /* padding: 30px 0 0 50px; */
     box-sizing: border-box;
@@ -332,10 +335,40 @@ h1 {
 
 .pop__up {
 
-background-color: darkmagenta;
-height: 100px;
-width: 250px;
-text-align: center;
-padding: 10px;
+    background-color: transparent;
+    height: 100%;
+    /* width: 250px; */
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: 1s ease-in;
 
+}
+
+.pop__up img {
+    transition: 1s ease-in;
+    height: 50%;
+    transform: translateX(-150px);
+}
+
+.pop__up div {
+    opacity: 0;
+    align-self: flex-start;
+    margin: 20px 8px 30px 8px;
+}
+
+.pop__up.poped__up{
+    /* transition: background-color 1s ease-in; */
+    background-color: var(--screen-color);
+}
+
+.pop__up.poped__up img {
+
+    transform: translateX(0px);
+}
+
+.pop__up.poped__up div {
+    transition: 1s ease-in;
+    opacity: 100%;  
 }
