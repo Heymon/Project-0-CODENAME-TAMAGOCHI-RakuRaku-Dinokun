@@ -124,7 +124,7 @@ class Tamagochi {
 
         console.log("died of " + descriptor);
 
-        popUpMessage("YOUOOUO let it DIEEE!")
+        popUpMessage(`You let him die of ${descriptor}`)
 
     }
 
@@ -137,7 +137,7 @@ let curScreen = screens[0];
 
 const intervalsArr = [];
 
-evolutionImgs = ["images/poketowerghost.gif", "images/haunter.gif", "images/gengar.gif"];
+const evolutionImgs = ["images/poketowerghost.gif", "images/haunter.gif", "images/gengar.gif"];
 
 //======================================= FUNCTIONS =========================
 
@@ -299,7 +299,7 @@ const popUpMessage = function popUpMessage(message) {
     const $message = $(`<section class="pop__up">
                             <img src="images/pikachu_wing.gif" alt="Death">
                             <div class="nes-balloon from-left">
-                                <p>${message} <br> Start Over ?</p>
+                                <p>${message} <br> Wanna Start Over ?</p>
                             </div>
                         </section>`);
 
