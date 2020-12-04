@@ -64,7 +64,10 @@ svg > ellipse:last-of-type {
 }
 
 h1 {
-    margin: 0 450px 0 450px;
+    /* margin: 0 450px 0 450px; */
+    margin: 17px 275px 0 288px;
+    /* margin: 17px 153px 0 173px; press start 2p font */ 
+
 }
 
 .plastic__body__top > button{
@@ -103,12 +106,13 @@ h1 {
 
 }
 
-.screen {
+/* .screen {
 
-    /* background-color: var(--screen-color); */
+    background-color: var(--screen-color);
+    font-family: 'Press Start 2P', cursive;
 
 
-}
+} */
 
 .screen__start {
     height: 100%;
@@ -297,16 +301,6 @@ h1 {
     width: 80px;
     
 }
-
-/* TODO spacer not working yet remember to fix it
-
-.screen:not(.home) li.spacer {
-    background-color: cyan;
-    max-height: 42px;
-    min-height: 18px;
-
-
-} */
 
 .screen:not(.home) li:last-child {
     /* background-color: cyan; */

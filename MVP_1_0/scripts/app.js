@@ -157,11 +157,11 @@ const checkScreenEnter = function checkScreenEnter(event) {
         updateScreen(curScreen);
         
     }else if (curScreen === "sleep"){
-        test.sleep(1);
+        test.sleep(-1);
         updateScreen(curScreen);
         
     }else if (curScreen === "play"){
-        test.play(1);
+        test.play(-1);
         updateScreen(curScreen);   
     }
 
@@ -343,9 +343,9 @@ const startTime = function startTime() {
     intervalsArr.push(ageTime);
     const hungerTime = setInterval(() => {test.feed(1); updateStats(curScreen);}, 10000);
     intervalsArr.push(hungerTime);
-    const boredomTime = setInterval(() => {test.play(-1); updateStats(curScreen);}, 5000);
+    const boredomTime = setInterval(() => {test.play(1); updateStats(curScreen);}, 5000);
     intervalsArr.push(boredomTime);
-    const sleepnessTime = setInterval(() => {test.sleep(-1); updateStats(curScreen);}, 12000);
+    const sleepnessTime = setInterval(() => {test.sleep(1); updateStats(curScreen);}, 12000);
     intervalsArr.push(sleepnessTime);
 
     /* 15000 25min
