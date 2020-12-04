@@ -270,5 +270,9 @@ h1 {
 .pop__up {
 
 background-color: darkmagenta;
+height: 100px;
+width: 250px;
+text-align: center;
+padding: 10px;
 
 }

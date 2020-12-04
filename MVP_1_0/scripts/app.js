@@ -285,9 +285,6 @@ const popUpMessage = function popUpMessage(message) {
 
     const stylings ={
 
-        "background-color": "red",
-        height: "100px",
-        width: "250px",
         position: "absolute",
         margin: "auto",
         left: "0",
