@@ -153,7 +153,7 @@ const checkScreenEnter = function checkScreenEnter(event) {
         updateScreen(curScreen);
         
     }else if (curScreen === "feed"){
-        test.feed(1);
+        test.feed(-1);
         updateScreen(curScreen);
         
     }else if (curScreen === "sleep"){
@@ -330,7 +330,7 @@ const startTime = function startTime() {
 
     const ageTime = setInterval(() => {test.ageOverTime(); updateAge(curScreen);}, 1000);//25min
     intervalsArr.push(ageTime);
-    const hungerTime = setInterval(() => {test.feed(-1); updateStats(curScreen);}, 10000);
+    const hungerTime = setInterval(() => {test.feed(1); updateStats(curScreen);}, 10000);
     intervalsArr.push(hungerTime);
     const boredomTime = setInterval(() => {test.play(-1); updateStats(curScreen);}, 5000);
     intervalsArr.push(boredomTime);
