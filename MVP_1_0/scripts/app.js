@@ -71,18 +71,31 @@ class Tamagochi {
 
     ageOverTime = function ageOverTime() {
         this.age++;
+        (this.age === 25 ? this.evolve(1) : null);
+        (this.age === 75 ? this.evolve(2) : null);
         console.log(this.age);
         this.checkDeath(this.age, "age");
         
     }
 
+    evolve = function evolve(index) {
+
+        const $imgArr = $("aside").children("img");
+
+        for (let i = 0; i < $imgArr.length; i++) {
+            $imgArr.eq(i).attr("src", evolutionImgs[index]); 
+        }
+
+    }
+
     checkDeath = function checkDeath(value, description) {
 
+        console.log(value);
         if ( description === "age" && value > 100 ) {
 
             this.die(description);
             
-        }else {
+        }else if(description !== "age"){
 
             if (value > 10 || value < 0) {
 
@@ -123,6 +136,8 @@ const screens = ["start", "home", "feed", "sleep", "play"];
 let curScreen = screens[0];
 
 const intervalsArr = [];
+
+evolutionImgs = ["images/poketowerghost.gif", "images/haunter.gif", "images/gengar.gif"];
 
 //======================================= FUNCTIONS =========================
 
@@ -313,7 +328,7 @@ const timer = setInterval(example, 100); */
 
 const startTime = function startTime() {
 
-    const ageTime = setInterval(() => {test.ageOverTime(); updateAge(curScreen);}, 15000);//25min
+    const ageTime = setInterval(() => {test.ageOverTime(); updateAge(curScreen);}, 1000);//25min
     intervalsArr.push(ageTime);
     const hungerTime = setInterval(() => {test.feed(-1); updateStats(curScreen);}, 10000);
     intervalsArr.push(hungerTime);
@@ -321,7 +336,11 @@ const startTime = function startTime() {
     intervalsArr.push(boredomTime);
     const sleepnessTime = setInterval(() => {test.sleep(-1); updateStats(curScreen);}, 12000);
     intervalsArr.push(sleepnessTime);
-    
+
+    /* 15000 25min
+       10000 
+       5000 
+       12000 20min */
     
 }
 
