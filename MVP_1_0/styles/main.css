@@ -93,6 +93,7 @@ h1 {
     /* display: flex;
     align-self: center; */
     background-color: olive;
+    overflow: hidden;
 
 }
 
@@ -129,8 +130,16 @@ h1 {
 
 }
 
-.screen__start > img {
+.screen__start > aside {
     height: 116px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.screen__start img {
+    height: 100%;
     /* padding: 30px 0 0 50px; */
     box-sizing: border-box;
 
@@ -161,9 +170,18 @@ h1 {
 
 }
 
-
-.home > img {
+.home > aside {
     height: 156px;
+    max-width: 213px;
+    min-width: 213px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.home img {
+    height: 100%;
     /* padding: 30px 0 0 50px; */
     box-sizing: border-box;
 
@@ -225,10 +243,19 @@ h1 {
 
 }
 
-
-.screen:not(.home) > img {
+.screen:not(.home) > aside {
     height: 156px;
+    max-width: 213px;
+    min-width: 213px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+}
+
+
+.screen:not(.home) img {
+    height: 156px;
     box-sizing: border-box;
 
 }
