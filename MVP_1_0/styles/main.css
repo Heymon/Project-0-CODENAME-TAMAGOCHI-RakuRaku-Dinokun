@@ -262,6 +262,7 @@ h1 {
 .screen:not(.home) img {
     height: 156px;
     box-sizing: border-box;
+    z-index: -2;
 
 }
 
@@ -271,18 +272,22 @@ h1 {
     width: 42%;
     min-height: 159px;
     max-height: 159px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     
 }
 
 .screen:not(.home) li:first-child {
-    background-color: cyan;
+    /* background-color: cyan; */
     border-style: solid;
-    border-color: cadetblue;
+    border-color: var(--screen-color);
     margin: 10px 0 0 0;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 10px 0 0 0;
 
 }
 
@@ -304,10 +309,11 @@ h1 {
 } */
 
 .screen:not(.home) li:last-child {
-    background-color: cyan;
+    /* background-color: cyan; */
     border-style: solid;
-    border-color: cadetblue;
-    margin: 50px 0 0 0;
+    border-color: var(--screen-color);
+    /* margin: 50px 0 0 0; */
+    padding: 0 0 0 0;
     display: flex;
     justify-content: center;
 
@@ -317,7 +323,9 @@ h1 {
 .screen:not(.home) button {
     color: darkmagenta;
     padding: 15px;
-    /* margin: 0 0 0 46px; */
+    margin: 0 0 0 46px; 
+    margin: 0 0 0 0;
+    padding: 8px;
 }
 
 .on {
