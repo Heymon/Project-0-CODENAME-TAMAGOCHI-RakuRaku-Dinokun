@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PRESS START 2P google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <!-- NES.css -->
+  <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+  <!-- Main CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+  <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <!-- Main JS -->
+    <script src="scripts/app.js" defer></script>
+    
+
+    <title>tamagochi</title>
+</head>
+<body>
+    <main class="plastic__body">
+
+        <!-- <svg width="1000" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="500" cy="640" rx="369" ry="260">
+        </svg> -->
+
+        <svg width="1000" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <!-- main body   -->
+            <ellipse cx="500" cy="640" rx="369" ry="260"/>
+            <ellipse cx="500" cy="500" rx="300" ry="250"/>
+            <!-- block middle border   -->
+            <ellipse cx="500" cy="620" rx="350" ry="250"/>
+              
+            <!-- first screen indent   -->
+              <!-- left side   -->
+              <path d="M 280 420 C 250 500, 240 650, 300 700" stroke="black" fill="transparent"/>
+              
+              <path d="M 300 700 C 325 720, 340 724, 350 720" stroke="black" fill="transparent"/>
+              <!-- bottom    -->
+              <path d="M 350 720 C 400 690, 600 690, 650 720" stroke="black" fill="transparent"/>
+              
+              <path d="M 650 720 C 660 724, 675 720, 700 700" stroke="black" fill="transparent"/>
+              
+            <!--   <path d="M 650 720 C 675 730, 699 702, 700 700" stroke="black" fill="transparent"/> -->
+              
+             <!--  right side  -->
+              <path d="M 720 420 C 750 500, 760 650, 700 700" stroke="black" fill="transparent"/>
+              
+              <path d="M 720 420 C 720 420, 690 330, 630 360" stroke="black" fill="transparent"/>
+              
+            <!--   <path d="M 710 420 C 710 420, 690 330, 630 360" stroke="black" fill="transparent"/> -->
+              
+             <!--  top  -->
+              <path d="M 370 360 C 400 390, 600 390, 630 360" stroke="black" fill="transparent"/>
+              
+              <path d="M 370 360 C 300 320, 280 420, 280 420" stroke="black" fill="transparent"/>
+              
+              
+        </svg>
+
+        <section class="plastic__body__top">
+            <h1>RakuRakuDinokun</h1>
+            <button id="left__button">left</button>
+
+            <div class="body__screen">
+                <div class="screen__start on">
+                    <h2>WELCOME</h2>
+                    <h3>This is your new Tamagochi!</h3>
+                    
+                    <h3>Enter it name below</h3>
+                    <input type="text" class="nes-input">
+
+                    <aside><img src="images/egg_sprite.gif" alt="tamagochi"></aside>
+
+                </div>
+                <div class="screen home off">
+                    <h2>name</h2>
+                    <h2>AG. 100</h2>
+                    <aside><img src="images/poketowerghost.gif" alt="tamagochi"></aside>
+                    <ul>
+                        <li class="nes-container is-dark"><span>hunger</span><meter class="hunger" value="5" min="-1" max="10" low="3" high="9"></meter></li>
+                        <li class="nes-container is-dark"><span>tiredness</span><meter class="sleepness" value="5" min="-1" max="10" low="3" high="9"></meter></li>
+                        <li class="nes-container is-dark"><span>boredom</span><meter class="boredom" value="5" min="-1" max="10" low="3" high="9"></meter></li>
+                    </ul>
+
+                </div>
+                <div class="screen feed off">
+                    <h2>name</h2>
+                    <h2>AG. 100</h2>
+                    <aside><img src="images/poketowerghost.gif" alt="tamagochi"></aside>
+                    <ul>
+                        <li class="nes-container is-dark"><span>hunger</span><meter class="hunger" value="5" min="-1" max="10" low="3" high="9"></meter></li>
+
+                        <li class="nes-container is-dark"><span>FEED</span></li>
+                        
+                    </ul>
+
+                </div>
+                <div class="screen sleep off">
+                    <h2>name</h2>
+                    <h2>AG. 100</h2>
+                    <aside><img src="images/poketowerghost.gif" alt="tamagochi"></aside>
+                    <ul>
+
+                        <li class="nes-container is-dark"><span>tiredness</span><meter class="sleepness" value="5" min="-1" max="10" low="3" high="9"></meter></li>
+
+                        <li class="nes-container is-dark"><span>TURN LIGHT OFF</span></li>
+
+                    </ul>
+
+                </div>
+                <div class="screen play off">
+                    <h2>name</h2>
+                    <h2>AG. 100</h2>
+                    <aside><img src="images/poketowerghost.gif" alt="tamagochi"></aside>
+                    <ul>
+
+                        <li class="nes-container is-dark"><span>boredom</span><meter class="boredom" value="5" min="-1" max="10" low="3" high="9"></meter></li>
+
+                        <li class="nes-container is-dark" ><span>PLAY</span></li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <button id="right__button">right</button>
+        </section>
+
+        <section class="plastic__body__bottom">
+            <button id="home__button">home</button>
+            <button id="enter__button">enter</button>
+            <button>clock</button>
+        </section>
+
+    </main>
+    
+</body>
+</html>
+
+
+<!-- credits:
+
+3d pikachu sprite by Cortoony : https://www.deviantart.com/cortoony/art/Detective-Pikachu-824807060
+
+pikachu with wing by Joshua Johnson : https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.lowgif.com%2Ftag%2Fpikachu-sprite-gif&psig=AOvVaw03w6d0R95-vfEnJNZj6EJE&ust=1607134390550000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCJCcp5ihs-0CFQAAAAAdAAAAABAD
+
+pikachu with baloons : https://www.google.com/url?sa=i&url=https%3A%2F%2Fgfycat.com%2Fstickers%2Fsearch%2Fpok%25C3%25A9mon%2Banimation&psig=AOvVaw03w6d0R95-vfEnJNZj6EJE&ust=1607134390550000&source=images&cd=vfe&ved=0CA0QjhxqFwoTCJCcp5ihs-0CFQAAAAAdAAAAABAl
+
+pokemon tower ghost by Cortoony : https://www.deviantart.com/cortoony/art/Pokemon-Tower-Ghost-822241446
+
+haunter by Cortoony : https://www.deviantart.com/cortoony/art/r-b-haunter-821060105
+
+
+missingno by Cortoony : https://www.deviantart.com/cortoony/art/Missingno-821694522
+
+gengar by Cortoony : https://www.deviantart.com/cortoony/art/r-b-gengar-821672470
+
+egg : https://www.pinterest.com/pin/102175485279986329/
+
+-->
