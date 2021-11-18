@@ -37,6 +37,13 @@ body {
 svg {
 
     position: absolute;
+    /* quick fix because svg shape is out of aligment; not sure yet why */
+    margin-top: -500px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 5px;
+    right: 0;
+    /* end of quick fix */
     z-index: -1;
 }
 
